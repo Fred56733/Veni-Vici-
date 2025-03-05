@@ -5,6 +5,7 @@ import CatInfo from './components/catInfo'
 function App() {
   const [catData, setCatData] = useState(null);
   const [bannedAttributes, setBannedAttributes] = useState([]);
+  const [bannedHistory, setBannedHistory] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const fetchData = async () => {
@@ -18,7 +19,10 @@ function App() {
     const data = await response.json();
     const filteredData = data.filter((cat) => {
       return !bannedAttributes.some((attribute) => {
-        return cat[attribute.attribute] === attribute.value;
+        if (attribute.attribute === 'breed') {
+          return cat.name === attribute.value;
+        }
+        return false;
       });
     });
 
@@ -47,10 +51,13 @@ function App() {
 
   const handleBan = (attribute, value) => {
     setBannedAttributes([...bannedAttributes, { attribute, value }]);
+    setBannedHistory([...bannedHistory, { attribute, value }]);
+    fetchData();
   }
 
   const resetBannedAttributes = () => {
     setBannedAttributes([]);
+    setBannedHistory([]);
   }
 
   return (
@@ -60,16 +67,14 @@ function App() {
         {loading ? 'Loading...' : 'New Cat'}
       </button>
       {catData && <CatInfo catData={catData} handleBan={handleBan}/>}
-      <div className="banned-attributes">
-        <h4>Banned Attributes</h4>
+      <div className="ban-list">
+        <h4>Banned Breeds</h4>
         <ul>
           {bannedAttributes.map((item, index) => (
-            <li key={index}>
-              {item.attribute}: {item.value}
-            </li>
+            <li key={index}>{item.attribute}: {item.value}</li>
           ))}
         </ul>
-        <button onClick={resetBannedAttributes}>Reset Banned Attributes</button>
+        <button onClick={resetBannedAttributes}>Reset Banned Breeds</button>
       </div>
     </div>  
   );
