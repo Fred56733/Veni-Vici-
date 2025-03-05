@@ -1,11 +1,11 @@
-import { useState,  useEffect } from 'react'
+import { useState } from 'react'
 import './App.css'
 import CatInfo from './components/catInfo'
 
 function App() {
-  const [catData, setCatData] = useState([]);
+  const [catData, setCatData] = useState(null);
   const [bannedCats, setBannedCats] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const fetchData = async () => {
     setLoading(true);
@@ -16,7 +16,7 @@ function App() {
         }
       });
     const data = await response.json();
-    const filteredData = data.filter((cat) => !bannedCats.includes(cat.name));
+    const filteredData = data.filter((cat) => !bannedCats.includes(cat.attribute));
     const randomCat = filteredData[Math.floor(Math.random() * filteredData.length)];
     setCatData(randomCat);
     } catch (error) {
@@ -25,10 +25,6 @@ function App() {
       setLoading(false);
     }
   };
-
-  useEffect(() => {
-    fetchData();
-  }, [bannedCats]);
 
   const handleBan = (attribute) => {
     setBannedCats([...bannedCats, attribute]);
