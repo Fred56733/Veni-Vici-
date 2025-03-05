@@ -11,6 +11,6 @@ const CatInfo = ({catData, handleBan}) => {
             <button onClick={() => handleBan(catData.id)}>Ban</button>
         </div>
     );
-    };
+};
 
 export default CatInfo;

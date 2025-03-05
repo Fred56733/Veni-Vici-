@@ -5,10 +5,34 @@
   text-align: center;
 }
 
+h3 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+button {
+  background-color: #ffae00;
+  color: #fff;
+  border: 1px solid #ffffff;
+  border-radius: 11px;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
 .app-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100%;
+}
+
+.catInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 2rem;
 }
