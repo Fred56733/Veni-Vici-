@@ -36,3 +36,9 @@ button {
   flex-direction: column;
   margin-top: 2rem;
 }
+
+.catInfo img {
+  max-width: 300px;
+  border-radius: 20%;
+  margin-bottom: 1rem;
+}
