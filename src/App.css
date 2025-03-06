@@ -3,12 +3,163 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh; 
+  overflow-y: auto; 
+}
+
+body {
+  background-image: url('.\assets\cat paw background.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  min-height: 100vh; 
+  overflow-y: auto; 
+}
+
+p {
+  margin: 0.5rem;
+  padding: 0.5rem;
 }
 
 .app-container {
   display: flex;
-  justify-content: center;
+  background-color: rgba(36, 36, 36, 0.973);
+  border-radius: 10%;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
   width: 100%;
+  overflow: hidden; 
+  flex-grow: 1; 
+  height: auto;
+  padding-bottom: 2rem; 
+}
+
+h4 {
+  margin-top: 20px;
+  margin-bottom: 5px;
+  font-size: 2rem;
+}
+
+h3 {
+  margin-top: 20px;
+  margin-bottom: 5px;
+  font-size: 1.5rem;
+}
+
+button {
+  background-color: #ffae00;
+  color: #fff;
+  border: 1px solid #ffffff;
+  border-radius: 8%;
+  padding: 0.5rem 1rem;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  font-size: large;
+}
+
+button:hover {
+  background-color: #794200;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.catInfo {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.catInfo img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 20%;
+  margin-bottom: 1rem;
+}
+
+.cat_stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+}
+
+.cat_stats p {
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.Winking-Cat {
+  width: 100%;
+  max-width: 1200px; 
+  height: auto;
+  display: block;
+}
+
+.ban-list, .interested-list {
+  margin-top: 2rem;
+  text-align: left;
+  max-width: 250px;
+}
+
+.ban-list h3, .interested-list h3 {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: .5rem;
+}
+
+.ban-list button, .interested-list button {
+  background-color: #ffae00;
+  color: #fff;
+  border: 1px solid #ffffff;
+  border-radius: 10%;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  font-size: medium;
+}
+
+.lists-container {
+  display: flex;
+  justify-content: space-between;
+  min-width: 40%;
+  max-width: 80%;
+  border-radius: 25px;
+  flex-grow: 1; 
+  min-height: 50px; 
+}
+
+.ban-list, .interested-list {
+  width: 50%;
+  margin: 25px;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+@media (max-width: 500px) {
+  .lists-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ban-list, .interested-list {
+    width: 100%;
+    margin: 10px 0;
+  }
 }
