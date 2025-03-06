@@ -2,9 +2,9 @@
 
 Submitted by: **Frederick DeBiase**
 
-This web app: **Allows its users to find the perfect breed of cat that fits there needs**
+This web app: **Allows its users to find the purrfect breed that fits them the best**
 
-Time spent: **12** hours spent in total
+Time spent: **8** hours spent in total
 
 ## Required Features
 
@@ -37,7 +37,7 @@ GIF created with ...
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+No major challenges had a great time building this web app because of my love for cats!
 
 ## License
 
