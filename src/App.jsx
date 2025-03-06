@@ -63,19 +63,25 @@ function App() {
   return (
     <div className="app-container">
       <h3>Find your Purrfect Cat</h3>
+      {catData ? (
+        <CatInfo catData={catData} handleBan={handleBan} />
+      ) : (
+        <img src="src\assets\wink cat.png" alt="Winking Cat" className="Winking-Cat" /> 
+      )}
       <button onClick={fetchData} disabled={loading}>
         {loading ? 'Loading...' : 'New Cat'}
       </button>
-      {catData && <CatInfo catData={catData} handleBan={handleBan}/>}
-      <div className="ban-list">
-        <h4>Banned Breeds</h4>
-        <ul>
-          {bannedAttributes.map((item, index) => (
-            <li key={index}>{item.attribute}: {item.value}</li>
-          ))}
-        </ul>
-        <button onClick={resetBannedAttributes}>Reset Banned Breeds</button>
-      </div>
+      {bannedHistory.length > 0 && (
+        <div className="ban-list">
+          <h4>Banned Breeds</h4>
+          <ul>
+            {bannedAttributes.map((item, index) => (
+              <li key={index}>{item.attribute}: {item.value}</li>
+            ))}
+          </ul>
+          <button onClick={resetBannedAttributes}>Reset Banned Breeds</button>
+        </div>
+      )}
     </div>  
   );
 }
