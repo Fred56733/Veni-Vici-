@@ -1,9 +1,9 @@
 import React from "react";
 
-const CatInfo = ({catData, handleBan}) => {
+const CatInfo = ({catData}) => {
     return (
         <div className="catInfo">
-            <h3>{catData.name} <button onClick={() => handleBan('breed', catData.name)}>Ban</button></h3>
+            <h3>{catData.name}</h3>
             <p>{catData.description}</p>
             {catData.image && <img src={catData.image.url} alt={catData.name}/>}
             
