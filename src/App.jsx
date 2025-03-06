@@ -82,9 +82,11 @@ function App() {
         <button onClick={fetchData} disabled={loading}>
           {loading ? 'Loading...' : 'New Cat'}
         </button>
-        <button onClick={() => handleBan('breed', catData?.name)} disabled={!catData}>
-          Ban Cat
-        </button>
+        {firstFetch && (
+          <button onClick={() => handleBan('breed', catData?.name)} disabled={!catData}>
+            Ban Cat
+          </button>
+        )}
       </div>
       <div className="lists-container">
         {bannedHistory.length > 0 && (
