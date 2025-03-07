@@ -1,4 +1,4 @@
-# Web Development Project 4 - *Purrfect*
+*Purrfect*
 
 Submitted by: **Frederick DeBiase**
 
